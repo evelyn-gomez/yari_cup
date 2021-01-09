@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class Recipes extends React.Component {
+class Designs extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        recipes: []
+        designs: []
       };
     }
     componentDidMount() {
-        const url = "/api/v1/recipes/index";
+        const url = "/api/v1/designs/index";
         fetch(url)
           .then(response => {
             if (response.ok) {
@@ -17,32 +17,32 @@ class Recipes extends React.Component {
             }
             throw new Error("Network response was not ok.");
           })
-          .then(response => this.setState({ recipes: response }))
+          .then(response => this.setState({ designs: response }))
           .catch(() => this.props.history.push("/"));
     }
     render() {
-        const { recipes } = this.state;
-        const allRecipes = recipes.map((recipe, index) => (
+        const { designs } = this.state;
+        const allDesigns = designs.map((design, index) => (
           <div key={index} className="col-md-6 col-lg-4">
             <div className="card mb-4">
               <img
-                src={recipe.image}
+                src={design.image} //image can stay the same//
                 className="card-img-top"
-                alt={`${recipe.name} image`}
+                alt={`${design.name} image`}
               />
               <div className="card-body">
-                <h5 className="card-title">{recipe.name}</h5>
-                <Link to={`/recipe/${recipe.id}`} className="btn custom-button">
-                  View Recipe
+                <h5 className="card-title">{design.name}</h5>
+                <Link to={`/designs/${design.id}`} className="btn custom-button">
+                  View Designs
                 </Link>
               </div>
-            </div>
+            </div>!
           </div>
         ));
-        const noRecipe = (
+        const noDesign = (
           <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
             <h4>
-              No recipes yet. Why not <Link to="/new_recipe">create one</Link>
+              No designs yet. Why not <Link to="/new_design">create one</Link>
             </h4>
           </div>
         );
@@ -51,7 +51,7 @@ class Recipes extends React.Component {
           <>
             <section className="jumbotron jumbotron-fluid text-center">
               <div className="container py-5">
-                <h1 className="display-4">Designs for every occasion</h1>
+                <h1 className="display-5">Designs for every occasion</h1>
                 <p className="lead text-muted">
                   We’ve pulled together our most popular desings , our latest
                   additions, and our editor’s picks, so there’s sure to be something
@@ -62,12 +62,12 @@ class Recipes extends React.Component {
             <div className="py-5">
               <main className="container">
                 <div className="text-right mb-3">
-                  <Link to="/recipe" className="btn custom-button">
+                  <Link to="/design" className="btn custom-button">
                     Create New Design 
                   </Link>
                 </div>
                 <div className="row">
-                  {recipes.length > 0 ? allRecipes : noRecipe}
+                  {designs.length > 0 ? allDesigns : noDesign}
                 </div>
                 <Link to="/" className="btn btn-link">
                   Home
@@ -78,4 +78,4 @@ class Recipes extends React.Component {
         );
       }
   }
-  export default Recipes;
+  export default Designs;

@@ -5,17 +5,17 @@ export default () => (
   <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">
     <div className="jumbotron jumbotron-fluid bg-transparent">
       <div className="container secondary-color">
-        <h1 className="display-4">Yari Cups </h1>
+        <h1 className="display-3">Yari Cups </h1>
         <p className="lead">
             Let us design your perfect gift set for all occassions. 
         </p>
         <hr className="my-4" />
         <Link
-          to="/recipes"
+          to="/Designs"
           className="btn btn-lg custom-button"
           role="button"
         >
-          View Designs
+          Get Started
         </Link>
       </div>
     </div>

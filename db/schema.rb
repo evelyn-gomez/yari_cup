@@ -10,24 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_044156) do
+ActiveRecord::Schema.define(version: 2020_12_16_045250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cup_designs", force: :cascade do |t|
+  create_table "designs", force: :cascade do |t|
     t.string "cup_size"
     t.string "cup_color"
     t.string "cup_text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "recipes", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "ingredients", null: false
-    t.text "instruction", null: false
-    t.string "image", default: "https://raw.githubusercontent.com/do-community/react_rails_recipe/master/app/assets/images/Sammy_Meal.jpg"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
