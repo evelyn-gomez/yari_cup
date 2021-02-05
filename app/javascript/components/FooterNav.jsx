@@ -2,19 +2,17 @@ import React from 'react';
 import { render } from 'react-dom';
 import styled from 'styled-components';
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.footer`
   font-family: 'Lato', sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 8px;
+  background-color: #f5bc2c;
+  color: #040a57;
+  line-height: 1.5;
 
   ul{
       list-style: none;
       padding-left: 0;
-    }
-    footer{
-      background-color: #f5bc2c;
-      color: #040a57;
-      line-height: 1.5;
     }
   a{
     text-decoration: none;
@@ -118,53 +116,51 @@ export default class FooterNav extends React.Component {
     render() {
         return (
           <FooterContainer>
-             <footer>
             {/* //footer main */}
-              <section className="ft-main">
-                <div className="ft-main-item">
-                  <h2 className="ft-title">About</h2>
-                  <ul>
-                    <li><a href="#ourstory">Our Story</a></li>
-                    <li><a href="#sellerinfo">Seller Shop Set up</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                  </ul>
-                </div>
-                <div className="ft-main-item">
-                  <h2 className="ft-title">Contact</h2>
-                  <ul>
-                    <li><a href="#">Seller Shop Rules</a></li>
-                    <li><a href="#">FAQ</a></li>
-                  </ul>
-                </div>
-                <div className="ft-main-item">
-                  <h2 className="ft-title">Stay Updated</h2>
-                  <p> Suscribe to our newsletter to get our latest news.</p>
-                  <form>
-                    <input type="email" name="email" placeholder="Enter email address"></input>
-                    <input type="submit" value="Subscribe"></input>
-                  </form>
-                </div>
-                </section>
-                {/* --footer social --  */}
-                <section className="ft-social">
-                  <ul className="ft-social-list">
-                    <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i className="fa fa-github"></i></a></li>
-                    <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i className="fa fa-youtube"></i></a></li>
-                  </ul>
-                </section>
-                {/* --footer legal--- */}
-                <section className="ft-legal">
-                  <ul className="ft-legal-list">
-                    <li><a href="#">Terms &amp; Conditions </a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li>&copy; 2021 Your Local Art-is-in Inc</li>
-                  </ul>
-                </section>
-            </footer>
+            <section className="ft-main">
+              <div className="ft-main-item">
+                <h2 className="ft-title">About</h2>
+                <ul>
+                  <li><a href="#ourstory">Our Story</a></li>
+                  <li><a href="#sellerinfo">Seller Shop Set up</a></li>
+                  <li><a href="#careers">Careers</a></li>
+                </ul>
+              </div>
+              <div className="ft-main-item">
+                <h2 className="ft-title">Contact</h2>
+                <ul>
+                  <li><a href="#">Seller Shop Rules</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </div>
+              <div className="ft-main-item">
+                <h2 className="ft-title">Stay Updated</h2>
+                <p> Suscribe to our newsletter to get our latest news.</p>
+                <form>
+                  <input type="email" name="email" placeholder="Enter email address"></input>
+                  <input type="submit" value="Subscribe"></input>
+                </form>
+              </div>
+              </section>
+              {/* --footer social --  */}
+              <section className="ft-social">
+                <ul className="ft-social-list">
+                  <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i className="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i className="fa fa-instagram"></i></a></li>
+                  <li><a href="#"><i className="fa fa-github"></i></a></li>
+                  <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i className="fa fa-youtube"></i></a></li>
+                </ul>
+              </section>
+              {/* --footer legal--- */}
+              <section className="ft-legal">
+                <ul className="ft-legal-list">
+                  <li><a href="#">Terms &amp; Conditions </a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li>&copy; 2021 Your Local Art-is-in Inc</li>
+                </ul>
+              </section>
           </FooterContainer>
            
         )

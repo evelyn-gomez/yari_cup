@@ -3,9 +3,14 @@ import { render } from 'react-dom';
 import styled from 'styled-components';
 
 const NavContainer = styled.div`
+  position: sticky;
+  top: 0;
+  background-color: #f5bc2c;
   padding: 8px;
   text-align: center;
-  color: #f5bc2c;
+  h1 {
+    color: #ffffff;
+  }
 `;
 
 const NavLinks = styled.div`
@@ -14,7 +19,7 @@ const NavLinks = styled.div`
   letter-spacing: .25px;
 
   a {
-    margin: 5px;
+    margin: 8px;
   }
 `;
 
@@ -26,11 +31,14 @@ const SearchBar = styled.div`
   }
 `;
 
-const ShoppingBag= styled.div`
-  a {
-    position: absolute; 
-    top: 4px;
-    right: 4px;
+const TopRightCornerElements= styled.div`
+  position: absolute;
+  right: 8px;
+  line-height: 0;
+  font-size: x-large;
+  
+  a { 
+    margin-left: 8px;
   }
 `;
 
@@ -44,15 +52,16 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <NavContainer>
+        <TopRightCornerElements>
+          <a href="#bookmarks" className="fa fa-bookmark"></a>
+          <a href="#shoppingbag" className="fa fa-shopping-bag"></a>
+        </TopRightCornerElements>
         <h1>Front</h1>
         <NavLinks>
           <a href="#home" className="active">Home</a>
           <a href="#blog">Blog</a>
           <a href="#signIn">Sign In</a>
         </NavLinks>
-        <ShoppingBag>
-          <a href="#shoppingbag" className="fa fa-shopping-bag" aria-hidden="true"></a>
-        </ShoppingBag>
         <SearchBar>
           <input type="text" placeholder="Search.."></input>
           <i className="fa fa-search"></i>
